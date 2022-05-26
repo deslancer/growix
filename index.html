@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>GROWIX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Babylon.js -->
+    <script src="vendor/jquery-3.5.1.min.js"></script>
+    <script src="vendor/babylon.js"></script>
+    <script src="vendor/babylonjs.loaders.min.js"></script>
+    <script src="vendor/babylonjs.postProcess.min.js"></script>
+    <script src="vendor/babylon.gui.min.js"></script>
+    <script src="vendor/babylonjs.materials.min.js"></script>
+    <script src="js/Hotspots.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/Main.min.js"></script>
+
+</head>
+<body>
+<div class="preload_container">
+    <div id="preloader">
+        <div class="logo">
+            <img width="300" src="assets/images/logo_white.svg" alt="logo">
+        </div>
+        <div class="progressbar">
+            <div class="dot_container">
+                <div class='spinner-container'>
+                    <div class="dot"></div>
+                    <div class="spinner-path">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <filter id="gooey">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+        <div id="bar" class="bar"></div>
+    </div>
+</div>
+<div id="overlay" class="overlay"></div>
+<div class="video_overlay"></div>
+<div class="back_arrow_video"><span><img height="16" class="back_arrow_img" src="assets/images/left-arrow.svg" alt=""></span><span>&nbsp;Back</span></div>
+<a href="#" id="customer_logo">
+    <img width="150" src="assets/images/logo_white.svg" alt="logo">
+</a>
+
+<div class="arrows_container">
+    <div class="action_arrows">
+        <div class="dots_container">
+            <div class="action_dots">
+                <div class="a_dot temp_action" data-text="Control Panel" id="open"></div>
+                <div class="a_dot temp_action" data-text="Access to the Drum" id="start"></div>
+                <div class="a_dot temp_action" data-text="Growth of crops" id="result"></div>
+            </div>
+            <div class="message_box"><p>Choose an Action</p></div>
+        </div>
+    </div>
+</div>
+<video style="display: none" id="growth_video" muted="muted" playsinline  preload="none">
+    <source src="assets/Final.mp4" type='video/mp4'/>
+    <source src="assets/Final.webm" type="video/webm" />
+    <source src="assets/Final.ogv" type="video/ogv" />
+</video>
+
+<canvas id="renderCanvas"></canvas>
+
+</body>
+</html>
